@@ -8,8 +8,8 @@
 
 ## Overview
 
-* The coach will demonstrate the principles of isolating unit tests. You can see the stages in ./images.
-* You will isolate some un-isolated unit tests.
+- The coach will demonstrate the principles of isolating unit tests. You can see the stages in ./images.
+- You will isolate some un-isolated unit tests.
 
 ## Instructions
 
@@ -22,7 +22,7 @@ Your task: isolate the unit tests in `./spec`.
 
 **Make sure to do them in this order**:
 
-1. test.score method.
+1. exam.score method.
 2. student.happiness method.
 3. student.test_scores method.
 

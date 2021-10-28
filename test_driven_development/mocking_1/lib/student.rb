@@ -1,9 +1,9 @@
 class Student
-  def initialize(first_name: "Joe", last_name: "Bloggs", feedbacks: [], tests: [])
+  def initialize(first_name: "Joe", last_name: "Bloggs", feedbacks: [], exams: [])
     @first_name = first_name
     @last_name  = last_name
     @feedbacks  = feedbacks
-    @tests      = tests
+    @exams      = exams
   end
 
   def full_name
@@ -15,10 +15,10 @@ class Student
     average_feedbacks
   end
 
-  def test_scores
-    @tests
+  def exam_scores
+    @exams
       .group_by(&:pretty_date_taken)
-      .map {|date, tests| [date, tests.map(&:score)] }
+      .map {|date, exams| [date, exams.map(&:score)] }
       .to_h
   end
 

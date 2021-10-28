@@ -1,5 +1,5 @@
 require 'student'
-require 'test'
+require 'exam'
 require 'feedback'
 
 describe Student do
@@ -31,17 +31,17 @@ describe Student do
     end
   end
 
-  describe '#test_scores' do
-    it 'returns all test scores' do
-      test_1 = Test.new(Date.today, [Answer.new(5, 5)])
-      test_2 = Test.new(Date.today, [Answer.new(6, 6)])
-      student = Student.new(tests: [test_1, test_2])
+  describe '#exam_scores' do
+    it 'returns all exam scores' do
+      exam_1 = Exam.new(Date.today, [Answer.new(5, 5)])
+      exam_2 = Exam.new(Date.today, [Answer.new(6, 6)])
+      student = Student.new(exams: [exam_1, exam_2])
 
-      expect(student.test_scores).to eq({ "#{ Date.today.to_s }" => [1, 1] })
+      expect(student.exam_scores).to eq({ "#{ Date.today.to_s }" => [1, 1] })
     end
 
     it 'defaults to being empty' do
-      expect(student.test_scores).to be_empty
+      expect(student.exam_scores).to be_empty
     end
   end
 

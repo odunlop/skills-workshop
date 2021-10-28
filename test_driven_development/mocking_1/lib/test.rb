@@ -1,4 +1,4 @@
-class Test
+class Exam
   def initialize(date_taken, answers)
     @date_taken = date_taken
     @answers    = answers

@@ -1,7 +1,7 @@
-require 'test'
+require 'exam'
 require 'answer'
 
-describe Test do
+describe Exam do
   let(:answers) do
     [
       Answer.new(5, 5),
@@ -10,17 +10,17 @@ describe Test do
     ]
   end
 
-  subject(:test) { Test.new(Date.today, answers) }
+  subject(:exam) { Exam.new(Date.today, answers) }
 
   describe '#pretty_date_taken' do
-    it 'returns the date the test was taken, as a string' do
-      expect(test.pretty_date_taken).to eq Date.today.to_s
+    it 'returns the date the exam was taken, as a string' do
+      expect(exam.pretty_date_taken).to eq Date.today.to_s
     end
   end
 
   describe '#score' do
     it 'returns the number of correct answers' do
-      expect(test.score).to eq 3
+      expect(exam.score).to eq 3
     end
   end
 end
