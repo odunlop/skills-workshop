@@ -1,6 +1,12 @@
 # Explore asynchronicity and the event loop in Javascript
 
-## Instructions
+### Learning objectives
+
+ * Describe "the flow of control of a program" as "the order in which the parts of the code are executed".
+ * Understand how asynchronous behaviour is different from synchronous.
+ * Follow the flow of control to help you understand how callbacks work.
+
+### Instructions
 
 For each piece of code below:
 
@@ -23,26 +29,27 @@ For each piece of code below:
 
 ---
 
-```
-setTimeout(function() {
+```js
+setTimeout(() => {
 	console.log('hello')
 }, 1000)
 ```
 ---
 
-```
-const callback = function() {
+```js
+const callback = () => {
 	console.log('hello')
 }
+
 setTimeout(callback, 1000)
 ```
 
 ---
 
-```
+```js
 console.log('A')
 
-const callback = function() {
+const callback = () => {
 	console.log('B')
 }
 
@@ -55,10 +62,10 @@ console.log('D')
 
 ---
 
-```
+```js
 console.log('A')
 
-const callback = function() {
+const callback = () => {
 	console.log('B')
 }
 
@@ -71,10 +78,10 @@ console.log('D')
 
 ---
 
-```
+```js
 let a = 10
 
-const callback = function() {
+const callback = () => {
 	a = 20
 }
 
@@ -85,10 +92,10 @@ console.log(a)
 
 ---
 
-```
+```js
 let a = 10
 
-const callback = function() {
+const callback = () => {
 	a = 20
 }
 setTimeout(callback, 0)
@@ -98,10 +105,10 @@ console.log(a)
 
 ---
 
-```
+```js
 let a = 10
 
-const callback = function() {
+const callback = () => {
 	a = 20
 	console.log(a)
 }
@@ -110,8 +117,8 @@ setTimeout(callback, 0)
 
 ---
 
-```
-const callback = function() {
+```js
+const callback = () => {
 	return "hello"
 }
 setTimeout(callback, 2000)
