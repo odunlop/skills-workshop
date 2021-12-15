@@ -7,7 +7,7 @@ class Game
   end
 
   def shuffle_deck
-    @players.shuffle
+    @deck.shuffle
   end
 
   # give nb_of_cards cards from deck to each player
@@ -22,7 +22,7 @@ class Game
 
   def show_player_hands
     @players.sort_by(&:name).map do |player|
-      puts "#{player.name}:  #{player.show_hand}"
+      puts "#{player.name}: #{player.show_hand}"
     end
   end
 

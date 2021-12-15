@@ -2,6 +2,8 @@ class Cipher
 
   def encode(plaintext, key)
     cipher = key.chars.uniq + (('a'...'z').to_a - key.chars)
+    # p "this is the cipher"
+    # p cipher
     ciphertext_chars = plaintext.chars.map do |char|
       (65 + cipher.find_index(char)).chr
     end
@@ -16,3 +18,8 @@ class Cipher
     plaintext_chars.join
   end
 end
+
+# text = "theswiftfoxjumpedoverthelazydog"
+# encoded_text = "EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL"
+# code = Cipher.new
+# code.encode(text, key)

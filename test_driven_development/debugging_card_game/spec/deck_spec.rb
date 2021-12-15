@@ -8,8 +8,8 @@ describe Deck do
 
   it 'shuffles' do
     deck = Deck.new
-    srand(3)
-    deck.shuffle
+    p srand(3)
+    p deck.shuffle
     expect(deck.draw).to eq '4♣'
   end
 end
